@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define fast ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define test int t; cin>>t; while(t--)
+#define pb push_back
+#define mp(a,b) make_pair(a,b)
+#define f0(i,n) for( ll i = 0; i < ( n ); i ++)
+#define f1(i,n) for(i = 1; i <= ( n ); i ++)
+#define f(i,m,n) for(auto i = ( m ); i <= ( n ); i ++)
+#define nl cout<<"\n"
+#define  MOD 1000000007
+#define fi first
+#define se second
+#define all(a) a.begin(),a.end()
+#define rall(v) v.rbegin(), v.rend()
+#define SZ(x) ((ll)x.size())
+#define mem(a, b) memset(a, b, sizeof(a));
+#define make_graph(k) int x,y; f0(i,k){cin>>x>>y; adj[x].pb(y); adj[y].pb(x);}
+#define dekh cout<<"dekh"
+
+
+typedef vector<ll> vl;
+
+bool isPowerOfTwo (int x)
+{
+    /* First x in the below expression is for the case when x is 0 */
+    return x && (!(x&(x-1)));
+}
+
+int main()
+{
+    fast
+     test
+     {
+         ll n; cin>>n;
+         if(n==1){cout<<"1";nl;continue;}
+
+         if(isPowerOfTwo(n)){cout<<"-1";nl;continue;}
+
+         if(n==3){cout<<"2 3 1";nl;continue;}
+            ll i;
+         cout<<"2 3 1 ";
+         for(i=4 ; i<=n ; i++)
+         {
+             if(isPowerOfTwo(i)){cout<<i+1<<" ";continue;}
+
+             if(isPowerOfTwo(i-1)){cout<<i-1<<" ";continue;}
+
+             cout<<i<<" ";
+         }
+         nl;
+     }
+}
+
